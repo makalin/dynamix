@@ -2,6 +2,8 @@
 
 **DynaMix** is an audio transition analysis tool designed for DJs and music enthusiasts to ensure smooth and energetic transitions between tracks. By analyzing the RMS (Root Mean Square) energy levels of two MP3 files, DynaMix helps you identify the optimal mixing points so that the energy flow on the dance floor remains consistent.
 
+[![Türkçe](https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg)](BENIOKU.md)
+
 ## Features
 
 - **Audio Energy Analysis:** Computes RMS energy levels for each track.

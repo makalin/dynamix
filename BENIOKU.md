@@ -9,6 +9,44 @@
 - **Miksaj Önerileri:** İlk parçanın enerjik kısmının ne kadar süre kullanılabileceğine dair öneriler sunar.
 - **Görselleştirme:** Geçişin daha iyi anlaşılması için her iki parçanın enerji eğrilerini grafik olarak gösterir.
 
+## Ekran Görüntüleri
+
+### 1. Terminal Çıktısı
+
+DynaMix’i çalıştırdığınızda terminalde aşağıdakine benzer bir çıktı alabilirsiniz:
+
+```
+$ python mix_analiz.py yol/Parca1.mp3 yol/Parca2.mp3 --gecis_suresi 10 --threshold_factor 1.2
+
+=== Analiz Sonuçları ===
+Parça 1 süresi: 200.45 saniye
+Parça 1'in son 10 saniyesinin ortalama enerji değeri: 0.03450
+Parça 2'de enerji artış noktası yaklaşık 5.20 saniyede tespit edildi.
+
+Öneri:
+- Parça 2'nin enerjik girişine kadar, parça 1'in son 10 saniyelik bölümünü kullanmayı deneyebilirsiniz.
+```
+
+Bu ekran görüntüsü, DynaMix’in analiz sürecinin sonucunu özetler ve miksaj önerisini kullanıcıya sunar.
+
+### 2. Enerji Analizi Grafikleri
+
+Analiz işlemi sırasında DynaMix, her iki parça için ayrı ayrı enerji eğrilerini içeren grafikler oluşturur. Örnek olarak:
+
+- **Parça 1 Enerji Grafiği:**  
+  - Zaman ekseni üzerinde RMS enerji değerleri gösterilir.
+  - Parça 1'in son kısmının (örneğin son 10 saniye) başlangıcını belirten kırmızı kesikli bir çizgi yer alır.
+
+- **Parça 2 Enerji Grafiği:**  
+  - RMS enerji değerleri zaman içinde çizilir.
+  - Enerji artışının tespit edildiği noktayı işaretlemek için yeşil kesikli bir çizgi bulunur.
+
+*Örnek Resim:*
+
+> **Not:** Aşağıdaki görsel, DynaMix’in oluşturduğu enerji grafikleri için örnek bir ekran görüntüsüdür. Kendi analiz sonuçlarınız farklılık gösterebilir.
+
+![DynaMix Energy Analysis Graphs](screenshot.png)
+
 ## Gereksinimler
 
 - **Python 3.x**

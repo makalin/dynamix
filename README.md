@@ -103,6 +103,41 @@ Batch analyze entire directories:
 python dj_tools.py --batch /path/to/music/folder --output-dir /path/to/notes
 ```
 
+### Graphical User Interface
+
+Launch the GUI application:
+
+```bash
+python gui.py
+```
+
+The GUI provides access to all DynaMix features through an intuitive interface.
+
+### Audio Effects Analysis
+
+Analyze audio effects and advanced characteristics:
+
+```python
+from audio_effects import AudioEffects
+
+effects = AudioEffects("track.mp3")
+analysis = effects.get_comprehensive_effects_analysis()
+print(analysis)
+```
+
+### Export Tools
+
+Export analysis results in various formats:
+
+```python
+from export_tools import ExportTools
+
+# Export to different formats
+ExportTools.export_to_json(data, "analysis.json")
+ExportTools.export_to_m3u(playlist, "playlist.m3u")
+ExportTools.export_to_rekordbox_xml(playlist, "rekordbox.xml")
+```
+
 ## 📊 Command-Line Arguments
 
 ### Enhanced Mix Analysis (`mix_enhanced.py`)
@@ -291,11 +326,134 @@ dynamix/
 ├── audio_utils.py         # Core audio analysis utilities
 ├── playlist_manager.py    # Playlist and set list management
 ├── dj_tools.py           # DJ performance tools
+├── audio_effects.py      # Audio effects and advanced analysis
+├── export_tools.py       # Export tools for various formats
+├── gui.py                # Graphical user interface
+├── examples.py           # Usage examples
 ├── requirements.txt      # Python dependencies
 ├── README.md            # This file
 ├── BENIOKU.md           # Turkish documentation
 └── LICENSE              # MIT License
 ```
+
+## 🖥️ Graphical User Interface
+
+DynaMix now includes a comprehensive GUI application for easy access to all tools:
+
+```bash
+python gui.py
+```
+
+### GUI Features
+
+- **Track Analysis Tab**: Analyze individual tracks with visualizations
+- **Two-Track Analysis Tab**: Compare and analyze compatibility between two tracks
+- **Playlist Manager Tab**: Manage and analyze entire music collections
+- **DJ Tools Tab**: Access all DJ performance tools (cue points, loops, zones, notes)
+- **Audio Effects Tab**: Analyze audio effects, dynamics, and frequency spectrum
+- **Export Tools Tab**: Export results in multiple formats (JSON, CSV, M3U, Rekordbox, Traktor)
+
+The GUI provides an intuitive interface for all DynaMix features without needing to use the command line.
+
+## 🆕 Additional Tools and Functions
+
+### Audio Effects Analysis (`audio_effects.py`)
+
+New advanced audio analysis capabilities:
+
+- **Dynamics Analysis**: Analyze dynamic range, compression, and crest factor
+- **Frequency Spectrum Analysis**: Analyze spectral characteristics, bass/mid/treble distribution
+- **Transient Response**: Analyze attack characteristics and onset detection
+- **Clipping Detection**: Detect potential audio clipping/overload
+- **Phasing Detection**: Detect potential phasing issues in stereo audio
+- **Track Comparison**: Compare multiple tracks for optimal mixing sequences
+
+```python
+from audio_effects import AudioEffects, TrackComparer
+
+# Analyze audio effects
+effects = AudioEffects("track.mp3")
+analysis = effects.get_comprehensive_effects_analysis()
+
+# Compare multiple tracks
+comparer = TrackComparer()
+comparer.add_track("track1.mp3")
+comparer.add_track("track2.mp3")
+comparer.add_track("track3.mp3")
+best_sequence = comparer.find_best_mix_sequence()
+```
+
+### Export Tools (`export_tools.py`)
+
+Export analysis results in various formats:
+
+- **JSON/CSV**: Standard data formats
+- **M3U**: Playlist format for media players
+- **Rekordbox XML**: Pioneer Rekordbox format
+- **Traktor NML**: Native Instruments Traktor format
+- **Text Reports**: Human-readable analysis reports
+
+```python
+from export_tools import ExportTools
+
+# Export to various formats
+ExportTools.export_to_json(data, "analysis.json")
+ExportTools.export_to_m3u(playlist, "playlist.m3u")
+ExportTools.export_to_rekordbox_xml(playlist, "rekordbox.xml")
+ExportTools.export_to_traktor_nml(playlist, "traktor.nml")
+```
+
+## 🗺️ Future Improvements Roadmap
+
+### Short-term (Next Release)
+
+- [ ] **Real-time Audio Analysis**: Live audio input analysis for DJ performance
+- [ ] **Cloud Sync**: Sync playlists and analysis data across devices
+- [ ] **Machine Learning Enhancements**: Improved BPM and key detection using ML models
+- [ ] **Advanced Visualization**: Interactive charts with zoom, pan, and export capabilities
+- [ ] **Audio Preview**: Built-in audio player for previewing tracks and cue points
+- [ ] **Database Integration**: SQLite database for storing analysis results and metadata
+- [ ] **Batch Processing Improvements**: Progress bars and cancellation for batch operations
+
+### Medium-term (3-6 Months)
+
+- [ ] **AI-Powered Mix Suggestions**: Machine learning models for optimal mix recommendations
+- [ ] **Genre Classification**: Automatic genre detection and classification
+- [ ] **Mood Detection**: Analyze and categorize tracks by mood/energy
+- [ ] **Harmonic Mixing Calculator**: Advanced harmonic mixing with Camelot wheel integration
+- [ ] **Waveform Display**: Visual waveform display with zoom and navigation
+- [ ] **Multi-format Support**: Enhanced support for more audio formats (OGG, FLAC, etc.)
+- [ ] **Plugin System**: Extensible plugin architecture for custom analysis tools
+- [ ] **REST API**: Web API for remote access and integration with other tools
+- [ ] **Mobile App**: Companion mobile app for iOS and Android
+
+### Long-term (6-12 Months)
+
+- [ ] **Cloud-based Processing**: Server-side processing for large collections
+- [ ] **Collaborative Playlists**: Share and collaborate on playlists with other DJs
+- [ ] **DJ Software Integration**: Direct integration with Serato, Traktor, Rekordbox
+- [ ] **Live Performance Mode**: Real-time analysis during live DJ sets
+- [ ] **Advanced Audio Effects**: Built-in audio effects and processing tools
+- [ ] **Video Analysis**: Analyze music videos and sync with audio
+- [ ] **Social Features**: Share mixes, get feedback, discover new tracks
+- [ ] **Machine Learning Training**: User feedback loop to improve ML models
+- [ ] **Multi-language Support**: Internationalization for multiple languages
+- [ ] **Accessibility Features**: Screen reader support and keyboard navigation
+
+### Technical Improvements
+
+- [ ] **Performance Optimization**: Faster analysis algorithms and parallel processing
+- [ ] **Memory Management**: Optimized memory usage for large playlists
+- [ ] **Error Handling**: Comprehensive error handling and recovery
+- [ ] **Testing Suite**: Unit tests, integration tests, and performance benchmarks
+- [ ] **Documentation**: Comprehensive API documentation and user guides
+- [ ] **Code Quality**: Code refactoring, type hints, and linting improvements
+- [ ] **Docker Support**: Containerized deployment for easy setup
+- [ ] **CI/CD Pipeline**: Automated testing and deployment
+
+### Feature Requests & Community
+
+We welcome feature requests and contributions! Please open an issue on GitHub to suggest new features or improvements.
 
 ## 🤝 Contributing
 

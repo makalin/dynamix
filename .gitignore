@@ -210,6 +210,28 @@ dj_notes/
 performance_notes/
 set_lists/
 
+# Export tool output files
+*.m3u
+*.m3u8
+*.xml
+*.nml
+*_export.*
+playlist_*.m3u
+playlist_*.xml
+playlist_*.nml
+rekordbox_*.xml
+traktor_*.nml
+
+# GUI related files
+*.pyc
+gui_cache/
+gui_logs/
+*.log
+
+# Audio effects analysis output
+*_effects_analysis.*
+effects_output/
+
 # Visualization output files
 *.png
 *.jpg
@@ -252,6 +274,8 @@ example_outputs/
 analysis_results/
 cache/
 logs/
+export_outputs/
+batch_analysis_output/
 
 # Configuration files with sensitive data
 config.ini

@@ -6,6 +6,7 @@ This file contains practical examples of how to use DynaMix for various scenario
 
 import os
 import sys
+import numpy as np
 from audio_utils import AudioAnalyzer, analyze_track_compatibility, suggest_mix_points
 from playlist_manager import PlaylistManager, create_energy_based_set
 from dj_tools import DJTools, batch_analyze_tracks
